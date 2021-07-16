@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screen.covid.AssesmentCovidActivity"
+    android:background="#D8E5F8">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:foreground="@drawable/mask"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:id="@+id/y"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:background="@drawable/bg_assesment"
+        android:padding="15dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="17dp"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintTop_toTopOf="@id/y">-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Pilihlah sesuai dengan kegiatan harian anda :"-->
+<!--                android:textSize="15dp" />-->
+
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_marginBottom="10dp"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="0.7"-->
+<!--                            android:text="Saya Keluar Rumah"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <RadioGroup-->
+<!--                            android:id="@+id/pilih1"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:orientation="horizontal">-->
+
+<!--                            <RadioButton-->
+<!--                                android:id="@+id/ya1"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:backgroundTint="@color/maroon"-->
+<!--                                android:text="Ya"-->
+<!--                                android:textSize="12dp" />-->
+
+<!--                            <RadioButton-->
+<!--                                android:id="@+id/tdk1"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:backgroundTint="@color/maroon"-->
+<!--                                android:text="Tidak"-->
+<!--                                android:textSize="12dp" />-->
+<!--                        </RadioGroup>-->
+<!--                    </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya menggunakan transportasi publik : ojol/opang atau taksi online"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya menggunakan angkutan kota"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya3"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk3"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya menggunakan bus"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih4"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya4"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk4"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya menggunakan kereta api"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih5"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya5"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk5"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya keluar tidak menggunakan masker"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih6"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya6"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk6"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya tetap melakukan jabat tangan"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih7"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya7"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk7"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya tidak sering mencuci tangan dalam perjalanan"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih8"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya8"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk8"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya tidak sering menggunakan handsanitizer"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih9"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya9"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk9"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya tidak menjaga jarak dengan lainya ketika kegiatan luar,belajar-kerja-ibadah-belanja"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih10"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya10"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk10"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya tidak mencuci tangan ketika sampai dirumah"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih11"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya11"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk11"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya berada di wilayah provinsi tertular"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih12"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya12"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk12"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya mengunjungi bandung dan sekitarnya(cimahi)), bogor), tanggerang), bekasi), depok jakarta), cirebon dalam 2 pekan terakhir"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih13"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya13"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk13"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:text="Saya mempunyai penyakit: penyakit jantung), diabetes), gangguan penafasan kronik"-->
+<!--                android:textSize="14dp" />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/pilih14"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/ya14"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Ya"-->
+<!--                    android:textSize="12dp" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/tdk14"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:backgroundTint="@color/maroon"-->
+<!--                    android:text="Tidak"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RadioGroup>-->
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/QuestionView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_selesai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selesai"
+            android:textStyle="bold"
+            android:backgroundTint="#575AE6"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

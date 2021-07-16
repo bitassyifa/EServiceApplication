@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.projectassyifa.eserviceapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".container.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_esa"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_esa1_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EServiceApplication"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".screen.hrd.statusizincuti.StatusMainActivity"></activity>
+        <activity android:name=".screen.hrd.FormIzinActivity" />
+        <activity android:name=".screen.health.HealthCareEmployee" />
+        <activity android:name=".screen.covid.AssesmentCovidActivity" />
+        <activity android:name=".screen.hrd.HrdActivity" />
+        <activity android:name=".screen.home.HomeActivity" />
+        <activity android:name=".screen.login.LoginActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
