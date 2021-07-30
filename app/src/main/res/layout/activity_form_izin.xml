@@ -333,7 +333,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.3"
-                android:text="Alasan Cuti "
+                android:text="Alasan Izin"
                 android:textSize="15dp"
                 android:layout_marginRight="5dp"
                 android:layout_gravity="center" />
@@ -377,7 +377,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tanggal Mulai Cuti"
+                android:text="Tanggal Mulai Izin"
                 android:layout_weight="1.3"
                 android:textSize="15dp" />
             <TextView
@@ -432,7 +432,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Alamat selama cuti"
+                    android:text="Alamat selama izin"
                     android:layout_weight="1.3"
                     android:textSize="15dp" />
                 <EditText

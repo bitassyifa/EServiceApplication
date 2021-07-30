@@ -16,8 +16,16 @@ class HrdActivity : AppCompatActivity() {
             var move = Intent(this,FormIzinActivity::class.java)
             startActivity(move)
         }
+        form_cuti_menu.setOnClickListener {
+            var move = Intent(this,FormCutiActivity::class.java)
+            startActivity(move)
+        }
         statusMain.setOnClickListener {
             var move = Intent(this,StatusMainActivity::class.java)
+            startActivity(move)
+        }
+        berkas.setOnClickListener {
+            var move = Intent(this,BerkasPegawaiActivity::class.java)
             startActivity(move)
         }
     }

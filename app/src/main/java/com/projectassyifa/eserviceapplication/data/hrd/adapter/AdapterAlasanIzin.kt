@@ -8,8 +8,9 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import com.projectassyifa.eserviceapplication.R
 import com.projectassyifa.eserviceapplication.data.hrd.model.AlasanCutiModel
+import com.projectassyifa.eserviceapplication.data.hrd.model.AlasanIzinModel
 
-class AdapterAlasanCuti (val context: Context, var dataSource :List<AlasanCutiModel>):BaseAdapter(){
+class AdapterAlasanIzin  (val context: Context, var dataSource :List<AlasanIzinModel>): BaseAdapter(){
 
     private val  inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 

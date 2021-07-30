@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.projectassyifa.eserviceapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".container.MyApplication"
@@ -13,7 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EServiceApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".screen.hrd.statusizincuti.StatusMainActivity"></activity>
+        <activity android:name=".screen.ruangrapat.MeetingRoom"></activity>
+        <activity android:name=".screen.hrd.BerkasPegawaiActivity" />
+        <activity android:name=".screen.hrd.FormCutiActivity" />
+        <activity android:name=".screen.hrd.statusizincuti.StatusMainActivity" />
         <activity android:name=".screen.hrd.FormIzinActivity" />
         <activity android:name=".screen.health.HealthCareEmployee" />
         <activity android:name=".screen.covid.AssesmentCovidActivity" />
@@ -27,6 +34,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.easyphotopicker.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/easyimage_filepaths"
+                tools:replace="android:resource" />
+        </provider>
     </application>
 
 </manifest>

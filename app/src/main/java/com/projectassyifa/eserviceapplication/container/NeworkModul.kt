@@ -31,6 +31,10 @@ class NetworkModul {
         return Connect.urlGlobal().create(AlasanCutiAPI::class.java)
     }
     @Provides
+    fun provideAlasanIzinAPI(): AlasanIzinAPI {
+        return Connect.urlGlobal().create(AlasanIzinAPI::class.java)
+    }
+    @Provides
     fun provideFungsionalAPI(): FungsionalAPI {
         return Connect.urlGlobal().create(FungsionalAPI::class.java)
     }
@@ -43,7 +47,24 @@ class NetworkModul {
         return Connect.urlGlobal().create(FormIzinHrdAPI::class.java)
     }
     @Provides
+    fun provideFormCutiAPI(): FormCutiHrdAPI {
+        return Connect.urlGlobal().create(FormCutiHrdAPI::class.java)
+    }
+    @Provides
     fun provideStatusIzinAPI(): StatusIzinAPI {
         return Connect.urlGlobal().create(StatusIzinAPI::class.java)
     }
+    @Provides
+    fun provideStatusCutiAPI(): StatusCutiAPI {
+        return Connect.urlGlobal().create(StatusCutiAPI::class.java)
+    }
+    @Provides
+    fun provideBerkasAPI(): BerkasAPI{
+        return Connect.urlGlobal().create(BerkasAPI::class.java)
+    }
+    @Provides
+    fun provideUploadBerkasAPI1(): UploadBerkasAPI1{
+        return Connect.urlGlobal().create(UploadBerkasAPI1::class.java)
+    }
+
 }

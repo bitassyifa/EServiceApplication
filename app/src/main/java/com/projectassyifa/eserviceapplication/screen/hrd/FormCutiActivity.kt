@@ -14,25 +14,39 @@ import androidx.lifecycle.Observer
 import com.projectassyifa.eserviceapplication.R
 import com.projectassyifa.eserviceapplication.container.MyApplication
 import com.projectassyifa.eserviceapplication.data.hrd.adapter.AdapterAlasanCuti
-import com.projectassyifa.eserviceapplication.data.hrd.adapter.AdapterAlasanIzin
+import com.projectassyifa.eserviceapplication.data.hrd.model.FormCutiHrdModel
 import com.projectassyifa.eserviceapplication.data.hrd.model.FormIzinHrdModel
 import com.projectassyifa.eserviceapplication.data.hrd.viewmdoel.*
 import com.projectassyifa.eserviceapplication.screen.home.HomeActivity
+import kotlinx.android.synthetic.main.activity_form_cuti.*
+import kotlinx.android.synthetic.main.activity_form_cuti.alamat_cuti
+import kotlinx.android.synthetic.main.activity_form_cuti.bidang1
+import kotlinx.android.synthetic.main.activity_form_cuti.jbt_amanah
+import kotlinx.android.synthetic.main.activity_form_cuti.nama_pemohon
+import kotlinx.android.synthetic.main.activity_form_cuti.nip1
+import kotlinx.android.synthetic.main.activity_form_cuti.no_tlp
+import kotlinx.android.synthetic.main.activity_form_cuti.spinnerCuti
+import kotlinx.android.synthetic.main.activity_form_cuti.status_kepegawaian
+import kotlinx.android.synthetic.main.activity_form_cuti.tgl_ajuan
+import kotlinx.android.synthetic.main.activity_form_cuti.tgl_akhir
+import kotlinx.android.synthetic.main.activity_form_cuti.tgl_mulai
+import kotlinx.android.synthetic.main.activity_form_cuti.tmt1
+import kotlinx.android.synthetic.main.activity_form_cuti.tombol_simpan
+import kotlinx.android.synthetic.main.activity_form_cuti.unit1
 import kotlinx.android.synthetic.main.activity_form_izin.*
 import java.text.SimpleDateFormat
 import java.util.*
+
 import javax.inject.Inject
 
+class FormCutiActivity : AppCompatActivity() {
 
-class FormIzinActivity : AppCompatActivity() {
+
     var dataLogin : SharedPreferences? = null
     var calender = Calendar.getInstance()
     var tanggalAwal : String ? = null
     var tanggalAkhir : String ? = null
     var alibi_cuti : String ? = null
-    var jarakTgl : String ? = null
-
-
 
     @Inject
     lateinit var statusAktifVM: StatusAktifVM
@@ -46,26 +60,22 @@ class FormIzinActivity : AppCompatActivity() {
     lateinit var strukturalVM: StrukturalVM
 
     @Inject
-    lateinit var alasanIzinVM: AlasanIzinVM
-    lateinit var adapterAlasanIzin: AdapterAlasanIzin
+    lateinit var alasanCutiVM: AlasanCutiVM
+    lateinit var adapterAlasanCuti: AdapterAlasanCuti
 
     @Inject
-    lateinit var formIzinHrdVM: FormIzinHrdVM
-
-
-
-
+    lateinit var formCutiHrdVM: FormCutiHrdVM
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_form_izin)
+        setContentView(R.layout.activity_form_cuti)
         (applicationContext as MyApplication).applicationComponent.inject(this)
         dataLogin = this.getSharedPreferences(
             getString(R.string.shared_preference_name),
             Context.MODE_PRIVATE
         )
 
-        val id_pegawai= dataLogin?.getString(
+        val id_pegawai = dataLogin?.getString(
             getString(R.string.id_pegawai),
             getString(R.string.default_value)
         )
@@ -78,40 +88,40 @@ class FormIzinActivity : AppCompatActivity() {
             getString(R.string.email),
             getString(R.string.default_value)
         )
-        val nip= dataLogin?.getString(
+        val nip = dataLogin?.getString(
             getString(R.string.nip),
             getString(R.string.default_value)
         )
 
-        val tmt= dataLogin?.getString(
+        val tmt = dataLogin?.getString(
             getString(R.string.tanggal_mulai_tugas),
             getString(R.string.default_value)
         )
 
-        val bidang= dataLogin?.getString(
+        val bidang = dataLogin?.getString(
             getString(R.string.bidang),
             getString(R.string.default_value)
         )
 
-        val unit= dataLogin?.getString(
+        val unit = dataLogin?.getString(
             getString(R.string.unit),
             getString(R.string.default_value)
         )
 
-        val sa= dataLogin?.getString(
+        val sa = dataLogin?.getString(
             getString(R.string.status_aktif),
             getString(R.string.default_value)
         )
 
-        val sp= dataLogin?.getString(
+        val sp = dataLogin?.getString(
             getString(R.string.status_pegawai),
             getString(R.string.default_value)
         )
-        val jf= dataLogin?.getString(
+        val jf = dataLogin?.getString(
             getString(R.string.fungsional_01),
             getString(R.string.default_value)
         )
-        val js= dataLogin?.getString(
+        val js = dataLogin?.getString(
             getString(R.string.struktural),
             getString(R.string.default_value)
         )
@@ -127,26 +137,26 @@ class FormIzinActivity : AppCompatActivity() {
         tgl_ajuan.text = currentDate
         nama_pemohon.text = nama
         nip1.text = nip
-        tmt1.text= tmt
-        bidang1.text= bidang
+        tmt1.text = tmt
+        bidang1.text = bidang
         unit1.text = unit
 
-        var stsPegawai : String ? = null
-        var jnsPegawai : String ? = null
-        var jbtFungsional : String ? = null
-        var jbtStruktural : String ? = null
+        var stsPegawai: String? = null
+        var jnsPegawai: String? = null
+        var jbtFungsional: String? = null
+        var jbtStruktural: String? = null
 
         //status
-        statusAktifVM.sts_pegawai?.observe(this,Observer{
+        statusAktifVM.sts_pegawai?.observe(this, Observer {
 
-            stsPegawai =it[0].status_aktif
+            stsPegawai = it[0].status_aktif
             println("Aktif? $stsPegawai")
         })
 
         statusAktifVM.statusPegawai(sa.toString())
 
         //jenis
-        jenisPegawaiVM.jns_pegawai?.observe(this,Observer{
+        jenisPegawaiVM.jns_pegawai?.observe(this, Observer {
 
             jnsPegawai = it[0].jenis_pegawai
             println("Jenis pegawai? $jnsPegawai")
@@ -157,11 +167,11 @@ class FormIzinActivity : AppCompatActivity() {
         println("Aktif1? $stsPegawai")
 
         //fungsional
-       fungsionalVM.type_fungsi?.observe(this, Observer {
-           jbtFungsional = it[0].fungsional
-           println("ini fungsional $jbtFungsional")
+        fungsionalVM.type_fungsi?.observe(this, Observer {
+            jbtFungsional = it[0].fungsional
+            println("ini fungsional $jbtFungsional")
 
-       })
+        })
         fungsionalVM.fungsional(jf.toString())
 
         //struktural
@@ -176,13 +186,13 @@ class FormIzinActivity : AppCompatActivity() {
         println("ini js $js")
         println("ini jf $jf")
         //spinner alesan
-        alasanIzinVM.alibi_izin?.observe(this,Observer{
-            adapterAlasanIzin = AdapterAlasanIzin(this,it)
-            spinnerCuti.adapter = adapterAlasanIzin
+        alasanCutiVM.alibi?.observe(this, Observer {
+            adapterAlasanCuti = AdapterAlasanCuti(this, it)
+            spinnerCuti.adapter = adapterAlasanCuti
 
 
             //select
-            spinnerCuti.onItemSelectedListener = object : AdapterView.OnItemSelectedListener  {
+            spinnerCuti.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     parent: AdapterView<*>?,
                     view: View?,
@@ -190,34 +200,36 @@ class FormIzinActivity : AppCompatActivity() {
                     id: Long
                 ) {
                     println("ALASAN ${it[position].nama}")
-                    alibi_cuti =it[position].kode
+                    alibi_cuti = it[position].kode
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
-                   println("no item select")
+                    println("no item select")
                 }
 
             }
         })
-        alasanIzinVM.izin()
+        alasanCutiVM.cuti()
 
         //tgl awal
         val dateStart = object : DatePickerDialog.OnDateSetListener {
             override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-                calender.set(Calendar.YEAR,year)
-                calender.set(Calendar.MONTH,month)
-                calender.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+                calender.set(Calendar.YEAR, year)
+                calender.set(Calendar.MONTH, month)
+                calender.set(Calendar.DAY_OF_MONTH, dayOfMonth)
                 updateTglAwal()
             }
         }
 
-        tgl_mulai.setOnClickListener(object : View.OnClickListener{
+        tgl_mulai.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View) {
-                DatePickerDialog(this@FormIzinActivity,
+                DatePickerDialog(
+                    this@FormCutiActivity,
                     dateStart,
                     calender.get(Calendar.YEAR),
                     calender.get(Calendar.MONTH),
-                    calender.get(Calendar.DAY_OF_MONTH)).show()
+                    calender.get(Calendar.DAY_OF_MONTH)
+                ).show()
             }
 
         })
@@ -225,43 +237,45 @@ class FormIzinActivity : AppCompatActivity() {
         //tgl akhir
         val dateEnd = object : DatePickerDialog.OnDateSetListener {
             override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-                calender.set(Calendar.YEAR,year)
-                calender.set(Calendar.MONTH,month)
-                calender.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+                calender.set(Calendar.YEAR, year)
+                calender.set(Calendar.MONTH, month)
+                calender.set(Calendar.DAY_OF_MONTH, dayOfMonth)
                 updateTglAkhir()
             }
         }
-        tgl_akhir.setOnClickListener(object : View.OnClickListener{
+        tgl_akhir.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View) {
-                DatePickerDialog(this@FormIzinActivity,
+                DatePickerDialog(
+                    this@FormCutiActivity,
                     dateEnd,
                     calender.get(Calendar.YEAR),
                     calender.get(Calendar.MONTH),
-                    calender.get(Calendar.DAY_OF_MONTH)).show()
+                    calender.get(Calendar.DAY_OF_MONTH)
+                ).show()
             }
 
         })
 
-            tombol_simpan.setOnClickListener {
-                var contentForm = FormIzinHrdModel(
-                    nama_pemohon = nama_pemohon.text.toString(),
-                    id_pegawai = id_pegawai.toString(),
-                    tmt = tmt.toString(),
-                    status_kepegawaian = "$jnsPegawai/$stsPegawai",
-                    jabatan_amanah = "$jbtStruktural/$jbtFungsional",
-                    bidang = bidang.toString(),
-                    unit = unit.toString(),
-                    alasan_cuti = alibi_cuti.toString(),
-                    cuti_mulai_tanggal = tanggalAwal.toString(),
-                    cuti_sampai_tanggal = tanggalAkhir.toString(),
-                    total_hari_cuti = "0",
-                    alamat_selama_cuti = alamat_cuti.text.toString(),
-                    no_hp_darurat = no_tlp.text.toString(),
-                    atasan_langsung = atasan.toString(),
-                    alasan_ijin_lainnya = "-",
-                    created_by = email.toString()
-                )
+        tombol_simpan.setOnClickListener {
+            var contentForm = FormCutiHrdModel(
+                nama_pemohon = nama_pemohon.text.toString(),
+                id_pegawai = id_pegawai.toString(),
+                tmt = tmt.toString(),
+                status_kepegawaian = "$jnsPegawai/$stsPegawai",
+                jabatan_amanah = "$jbtStruktural/$jbtFungsional",
+                bidang = bidang.toString(),
+                unit = unit.toString(),
+                alasan_cuti = alibi_cuti.toString(),
+                cuti_mulai_tanggal = tanggalAwal.toString(),
+                cuti_sampai_tanggal = tanggalAkhir.toString(),
+                total_hari_cuti = "0",
+                alamat_selama_cuti = alamat_cuti.text.toString(),
+                no_hp_darurat = no_tlp.text.toString(),
+                atasan_langsung = atasan.toString(),
 
+                created_by = email.toString()
+
+            )
 //                println("nama pemohon ${contentForm.nama_pemohon}")
 //                println("id_pegawai ${contentForm.id_pegawai}")
 //                println("tmt ${contentForm.tmt}")
@@ -278,22 +292,16 @@ class FormIzinActivity : AppCompatActivity() {
 //                println("atasan id${contentForm.atasan_langsung}")
 //                println("alasan izin lainya${contentForm.alasan_ijin_lainnya}")
 //                println("created by ${contentForm.created_by}")
+            formCutiHrdVM.formCuti(contentForm)
+            Toast.makeText(this, "Berhasil Disimpan", Toast.LENGTH_SHORT).show()
+            var move = Intent(this, HomeActivity::class.java)
+            startActivity(move)
 
-                formIzinHrdVM.formIzin(contentForm)
-                Toast.makeText(this, "Berhasil Disimpan", Toast.LENGTH_SHORT).show()
-                var move = Intent(this,HomeActivity::class.java)
-                startActivity(move)
-            }
-
-
-
+        }
     }
 
-
-
-
     private fun updateTglAkhir() {
-       val formatTgl = "dd-MM-yyyy"
+        val formatTgl = "dd-MM-yyyy"
         val sdf = SimpleDateFormat(formatTgl,Locale.US)
         tgl_akhir.text = sdf.format(calender.time)
         tanggalAkhir = sdf.format(calender.time)

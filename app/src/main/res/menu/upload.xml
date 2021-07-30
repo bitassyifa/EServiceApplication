@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/opencamera"
+        android:title="Open Camera"
+        android:icon="@drawable/ic_camera"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/openfile"
+        android:title="Open File"
+        android:icon="@drawable/ic_file"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/opengaleri"
+        android:title="Open Galeri"
+        android:icon="@drawable/ic_ft1"
+        app:showAsAction="ifRoom"/>
+</menu>

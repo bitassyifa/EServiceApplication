@@ -58,6 +58,7 @@ class StatusIzinPage : Fragment() {
         statusIzinVM.status_izin?.observe(viewLifecycleOwner, Observer {
             adapterStatusIzin = activity?.let { it1 -> AdapterStatusIzin(it, it1) }!!
             statusizinRV.adapter = adapterStatusIzin
+            println("DATA ADAPTER IZIN $adapterStatusIzin")
         })
         statusIzinVM.statusIzin(id_pegawai.toString())
 

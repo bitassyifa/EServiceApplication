@@ -2,11 +2,13 @@ package com.projectassyifa.eserviceapplication.screen.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.projectassyifa.eserviceapplication.R
+import com.projectassyifa.eserviceapplication.screen.alert.Loading
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -15,6 +17,15 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        val loading = Loading(this)
+        loading.startLoading()
+        val handler = Handler()
+        handler.postDelayed(object :Runnable{
+            override fun run() {
+                loading.isDismiss()
+            }
+
+        },3000)
         navController = (nav_main_host_fragment_container as NavHostFragment).navController
         NavigationUI.setupWithNavController(bottomNavView,navController)
         bottomNavView.setOnNavigationItemSelectedListener { item ->

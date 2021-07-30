@@ -92,7 +92,7 @@
                     android:layout_marginLeft="20dp">
 
                     <ImageView
-                        android:id="@+id/form_cuti"
+                        android:id="@+id/form_cuti_menu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -157,7 +157,7 @@
                 android:layout_marginLeft="20dp">
 
                 <ImageView
-                    android:id="@+id/menu2"
+                    android:id="@+id/berkas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
