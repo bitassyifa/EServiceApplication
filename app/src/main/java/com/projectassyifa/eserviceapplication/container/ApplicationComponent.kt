@@ -10,6 +10,8 @@ import com.projectassyifa.eserviceapplication.screen.hrd.UploadBerkas
 import com.projectassyifa.eserviceapplication.screen.hrd.statusizincuti.StatusCutiPage
 import com.projectassyifa.eserviceapplication.screen.hrd.statusizincuti.StatusIzinPage
 import com.projectassyifa.eserviceapplication.screen.login.LoginFragment
+import com.projectassyifa.eserviceapplication.screen.ruangrapat.AddSchedule
+import com.projectassyifa.eserviceapplication.screen.ruangrapat.MeetingRoom
 import dagger.Component
 
 @Component(modules = [NetworkModul::class])
@@ -24,4 +26,6 @@ fun inject(statusIzinPage: StatusIzinPage)
 fun inject(statusCutiPage: StatusCutiPage)
 fun inject(berkasPegawaiActivity: BerkasPegawaiActivity)
 fun inject(uploadBerkas: UploadBerkas)
+fun inject(meetingRoom: MeetingRoom)
+fun inject(addSchedule: AddSchedule)
 }

@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import com.projectassyifa.eserviceapplication.R
 import kotlinx.android.synthetic.main.activity_health_care_employee.*
+import kotlinx.android.synthetic.main.fragment_add_schedule.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -65,6 +66,8 @@ class HealthCareEmployee : AppCompatActivity() {
             }
 
         })
+
+
 
         nama_pegawai.text = "$nama, Apakah hari ini anda sehat ?"
         val myStrings = arrayOf("Pilih :","Ya", "Tidak")

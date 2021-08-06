@@ -16,6 +16,7 @@ import com.projectassyifa.eserviceapplication.R
 import com.projectassyifa.eserviceapplication.screen.covid.AssesmentCovidActivity
 import com.projectassyifa.eserviceapplication.screen.health.HealthCareEmployee
 import com.projectassyifa.eserviceapplication.screen.hrd.HrdActivity
+import com.projectassyifa.eserviceapplication.screen.ruangrapat.MeetingRoom
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_profil_user.*
 
@@ -52,6 +53,10 @@ class HomeFragment : Fragment() {
         }
         menu4.setOnClickListener {
             val move = Intent(this.context,HrdActivity::class.java)
+            startActivity(move)
+        }
+        menu8.setOnClickListener {
+            val move = Intent(this.context,MeetingRoom::class.java)
             startActivity(move)
         }
 

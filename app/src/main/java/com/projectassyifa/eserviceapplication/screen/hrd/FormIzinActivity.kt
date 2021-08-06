@@ -18,7 +18,9 @@ import com.projectassyifa.eserviceapplication.data.hrd.adapter.AdapterAlasanIzin
 import com.projectassyifa.eserviceapplication.data.hrd.model.FormIzinHrdModel
 import com.projectassyifa.eserviceapplication.data.hrd.viewmdoel.*
 import com.projectassyifa.eserviceapplication.screen.home.HomeActivity
+import kotlinx.android.synthetic.main.activity_berkas_pegawai.*
 import kotlinx.android.synthetic.main.activity_form_izin.*
+import kotlinx.android.synthetic.main.activity_form_izin.refreshLayout
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -64,7 +66,8 @@ class FormIzinActivity : AppCompatActivity() {
             getString(R.string.shared_preference_name),
             Context.MODE_PRIVATE
         )
-
+        //refresh
+        refreshApp()
         val id_pegawai= dataLogin?.getString(
             getString(R.string.id_pegawai),
             getString(R.string.default_value)
@@ -289,7 +292,14 @@ class FormIzinActivity : AppCompatActivity() {
 
     }
 
+    private fun refreshApp() {
+        refreshLayout.setOnRefreshListener {
+            Toast.makeText(this,"Refresh", Toast.LENGTH_SHORT).show()
+            finish();
+            startActivity(getIntent());
 
+        }
+    }
 
 
     private fun updateTglAkhir() {

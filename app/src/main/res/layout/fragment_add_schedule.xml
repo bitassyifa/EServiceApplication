@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screen.ruangrapat.AddSchedule">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Peminjaman Ruang Rapat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:textColor="@color/oren"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Peminjam"
+                android:layout_margin="2dp"
+                android:textColor="@color/oren"
+                android:padding="2dp"/>
+            <EditText
+                android:clickable="true"
+                android:id="@+id/peminjam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14dp"
+                android:textColor="@color/oren"
+                android:layout_gravity="center"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_text" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tanggal mengajukan"
+                android:layout_margin="2dp"
+                android:textColor="@color/oren"
+                android:padding="2dp"/>
+            <TextView
+                android:clickable="true"
+                android:id="@+id/tgl"
+                android:textColor="@color/oren"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="center"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_text"
+                android:drawableEnd="@drawable/calender_gray"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Jam Mulai"
+                android:layout_margin="2dp"
+                android:textColor="@color/oren"
+                android:padding="2dp"/>
+            <TextView
+                android:textColor="@color/oren"
+                android:clickable="true"
+                android:id="@+id/jam1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="center"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_text"
+                android:drawableEnd="@drawable/ic_time"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Jam selesai"
+                android:layout_margin="2dp"
+                android:textColor="@color/oren"
+                android:padding="2dp"/>
+            <TextView
+                android:textColor="@color/oren"
+                android:clickable="true"
+                android:id="@+id/jam2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="center"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_text"
+                android:drawableEnd="@drawable/ic_time"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ruangan"
+                android:layout_margin="2dp"
+                android:textColor="@color/oren"
+                android:padding="2dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_text"
+                android:orientation="horizontal">
+
+                <Spinner
+
+                    android:id="@+id/spinner_ruangan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:spinnerMode="dropdown" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/drop" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="PIC"
+                android:layout_margin="2dp"
+                android:textColor="@color/oren"
+                android:padding="2dp"/>
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="3dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/bg_text"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <Spinner-->
+<!--                    android:id="@+id/spinner_pic"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:spinnerMode="dropdown" />-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:src="@drawable/drop" />-->
+
+<!--            </RelativeLayout>-->
+            <com.zues.searchable_spinner.SearchableSpinner
+                android:background="@drawable/bg_text"
+                android:id="@+id/employee_list"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                app:label_color="@color/oren"
+                app:label_hint="Pilih PIC"
+                app:label_text_size="13dp"
+                app:selected_item_color="@color/oren"
+                app:showSearch="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Keperluan"
+                android:layout_margin="2dp"
+                android:textColor="@color/oren"
+                android:padding="2dp"/>
+            <EditText
+                android:clickable="true"
+                android:id="@+id/keperluan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14dp"
+                android:textColor="@color/oren"
+                android:layout_gravity="center"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_text" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Keterangan"
+                android:layout_margin="2dp"
+                android:textColor="@color/oren"
+                android:padding="2dp"/>
+            <EditText
+                android:textColor="@color/oren"
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:id="@+id/keterangan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_text"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:overScrollMode="always"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:lines="6"
+                android:textSize="15dp"
+                android:scrollHorizontally="false" />
+
+
+        </LinearLayout>
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/btn_add_schedule"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/oren"
+            android:fontFamily="sans-serif-medium"
+            android:text="Simpan"
+            android:textAllCaps="false"
+            app:icon="@drawable/ic_save1"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

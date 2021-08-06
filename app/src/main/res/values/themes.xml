@@ -27,4 +27,33 @@
     <style name="InactiveText">
     <item name="android:textColor">@color/maroon</item>
     </style>
+
+    <style name="CustomDatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/maroon</item>
+        <item name="android:datePickerStyle">@style/CustomDatePickerStyle</item>
+        <item name="android:colorAccent">@color/maroon</item>
+    </style>
+
+    <style name="CustomDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/maroon</item>
+        <item name="android:calendarTextColor">@color/gray</item>
+        <item name="android:dayOfWeekBackground">@color/gray</item>
+        <item name="android:yearListSelectorColor">@color/maroon</item>
+        <item name="android:datePickerMode">calendar</item>
+    </style>
+
+    <style name="CalenderViewCustom" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorAccent">#B1A007</item>
+        <item name="colorPrimary">@android:color/darker_gray</item>
+        <item name="android:textColorPrimary">#FFEB3B</item>
+    </style>
+
+    <style name="CalendarViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/gray1</item>
+    </style>
+
+    <style name="CalendarViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+    <item name="android:textColor">#FFEB3B</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

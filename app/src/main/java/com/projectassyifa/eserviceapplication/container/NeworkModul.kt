@@ -5,6 +5,9 @@ import com.projectassyifa.eserviceapplication.config.Connect
 import com.projectassyifa.eserviceapplication.data.assesmentCovid19.api.QuestionCovidAPI
 import com.projectassyifa.eserviceapplication.data.hrd.api.*
 import com.projectassyifa.eserviceapplication.data.login.api.UserLoginAPI
+import com.projectassyifa.eserviceapplication.data.pegawai.api.EmployeeAPI
+import com.projectassyifa.eserviceapplication.data.ruangrapat.api.ListRoomAPI
+import com.projectassyifa.eserviceapplication.data.ruangrapat.api.MeetingRoomAPI
 import dagger.Module
 import dagger.Provides
 
@@ -66,5 +69,16 @@ class NetworkModul {
     fun provideUploadBerkasAPI1(): UploadBerkasAPI1{
         return Connect.urlGlobal().create(UploadBerkasAPI1::class.java)
     }
-
+    @Provides
+    fun provideMeetingRoomAPI(): MeetingRoomAPI {
+        return Connect.urlGlobal().create(MeetingRoomAPI::class.java)
+    }
+    @Provides
+    fun provideListRoomAPI(): ListRoomAPI {
+        return Connect.urlGlobal().create(ListRoomAPI::class.java)
+    }
+    @Provides
+    fun provideEmployeeAPI(): EmployeeAPI {
+        return Connect.url_pegawai().create(EmployeeAPI::class.java)
+    }
 }
